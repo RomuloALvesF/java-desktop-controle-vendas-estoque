@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * @author NITRO5AN515-54-574Q
  */
 public interface Conexao {
-    public Connection Conectar()throws SQLException;
+    public Connection fazerConecao()throws SQLException;
         
     
     
