@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.raf.controlevendas.dominio;
+package com.raf.controlevendas.model;
 
+import com.raf.controlevendas.enumeration.Perfil;
 import java.time.LocalDateTime;
 
 /**
@@ -102,7 +103,12 @@ public class Usuario {
         this.ultimoLogin = ultimoLogin;
     }
 
-    
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + (int) (this.id ^ (this.id >>> 32));
+        return hash;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -117,6 +123,13 @@ public class Usuario {
         }
         final Usuario other = (Usuario) obj;
         return this.id == other.id;
+    }
+    
+    public void reset(){
+        this.estado = true;
+    }
+    public void mudarEstado(){
+        this.estado = !this.estado;
     }
     
     
