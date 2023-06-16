@@ -4,6 +4,7 @@
  */
 package com.raf.controlevendas.conexao;
 
+import com.sun.source.tree.TryTree;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,20 +15,20 @@ import java.sql.SQLException;
  */
 public class ConexaoMysql implements Conexao{
     
-    private final String USUARIO ="root";
-    private final String SENHA = "Raf-66574";
-    private final String URL = "jdbc:mysql://localhost:3306/gestao_produtos_usuarios?useTimezone=true&serverTimezone=UTC";
-    private Connection conectar;
+    private static final String USUARIO ="root";
+    private static final String SENHA = "Raf-66574";
+    private static final String URL = "jdbc:mysql://localhost:3306/gestao_produtos_usuarios?useTimezone=true&serverTimezone=UTC";
+    private static Connection conectar;
 
     @Override
     public Connection fazerConecao() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        
-            if(conectar == null){
-                conectar == DriverManager.getConnection(URL,USUARIO,SENHA);
-            }
-            return conectar;
+        if (conectar == null) {
+            conectar = DriverManager.getConnection(URL, USUARIO, SENHA);
+        }
+        return conectar;
     }
+
+    
    
         
 }
