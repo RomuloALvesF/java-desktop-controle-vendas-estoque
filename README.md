@@ -26,5 +26,5 @@ Software de gestão de venda e controle completo de estoque com Java swing (desk
 <li>Controle de vendas.
 
 <h4>Mais detalhes: <h4/>
-<p>Projeto desenvolvido para um supermercado em Santa Luzia - MG</p>
+
 <table/>
